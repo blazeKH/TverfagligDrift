@@ -1,5 +1,11 @@
 # TverfagligDrift
 
+
+## mål med oppgaven
+
+mål med oppgven er og lage et spill med GODOT som skal hostes på en sørver som når du logger in og trykker start eller slut i spille skal det sende en melding til en anen sørver
+som da skal telle hvor mange som spiller spillet.
+
 ## how to connect github to GODOT
 
 Using GitHub with Godot on Mac involves a series of steps to manage your Godot projects with version control. Here's a basic guide to help you get started:
