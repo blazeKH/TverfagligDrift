@@ -99,7 +99,8 @@ Keep in mind that this is a basic guide, and you might need to adapt it to your 
 This helps keep your repository clean and prevents unnecessary files from being tracked by Git.
 
 Remember to adapt these instructions based on your specific project requirements and collaboration workflow. If you plan to work with others, consider creating branches, using pull requests, and following best practices for collaborative development with Git and GitHub.
-//this tutorial is made by chatgpt.
+
+
 
 if you get this error:when i use the push command i get this error:error: src refspec master does not match any
 error: failed to push some refs to 'https://github.com/blazeKH/TverfagligDrift.git'. or a similar one this is what fixed it for me.
@@ -148,3 +149,6 @@ If you want to make `main` the default branch for future pushes, you can go to y
 5. Click the "Update" button.
 
 After performing these steps, you should be able to push your changes to the correct branch on GitHub without encountering the "src refspec master does not match any" error. Adjust the branch names based on your project's configuration.
+
+
+## this tutorial is made by chatgpt.
