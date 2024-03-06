@@ -12,8 +12,9 @@ config_version=5
 
 config/name="Tverfaglig"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://mystic_woods_free_2.1/icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
