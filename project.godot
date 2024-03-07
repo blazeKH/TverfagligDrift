@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Tverfaglig"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://mystic_woods_free_2.1/icon.svg"
+
+[display]
+
+window/stretch/scale=4.0
 
 [rendering]
 
