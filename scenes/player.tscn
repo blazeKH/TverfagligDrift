@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c6piklf7osif6"]
+[gd_scene load_steps=57 format=3 uid="uid://c6piklf7osif6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_13hbj"]
 [ext_resource type="Texture2D" uid="uid://cja3d7l47e620" path="res://mystic_woods_free_2.1/sprites/characters/player.png" id="2_utnq4"]
@@ -413,12 +413,62 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1p3dr"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u6ac4"]
+radius = 14.1421
+
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("1_13hbj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(98, 71)
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_614od")
-animation = &"down_walk"
+animation = &"down_attack"
+offset = Vector2(2.08165e-12, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, -2)
+shape = SubResource("CircleShape2D_1p3dr")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_u6ac4")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="world_camera" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 415
+limit_bottom = 191
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="cliffside_camera" type="Camera2D" parent="."]
+limit_left = -80
+limit_top = 1
+limit_right = 260
+limit_bottom = 1
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
