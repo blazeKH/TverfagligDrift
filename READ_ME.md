@@ -5,6 +5,19 @@
 i denne oppgaven skal jeg lage et spill og hoste det på en sørver.
 jeg skal også prøve og holde telle på hvor mange som spiller spillet.
 
+## brukertesting
+
+### Mann 50
+god kompetanse med spill
+
+tilbakemelding:
+	1. health baren var vanskelig og se.
+	2. syntes det hemlige stedet burde ha en finde eller noe lignene.
+
+forbedringer:
+	1. jeg har byttet farge på health baren til rød.
+	2. jeg skal legge til en slime i det hemlige området.
+
 ## hvordan koble opp github og GODOT
 
 Using GitHub with Godot on Mac involves a series of steps to manage your Godot projects with version control. Here's a basic guide to help you get started:
